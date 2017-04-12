@@ -31,7 +31,8 @@
 
             var myChart = new dimple.chart(svg, data);
             myChart.setBounds(60, 30, 510, 330);
-            myChart.addCategoryAxis("x", ["Age_Category","Survived"]).addOrderRule("Age_Category");
+            myChart.addCategoryAxis("x", ["Age_Category","Survived"]).addGroupOrderRule(["Child","Young","Adult","Senior","Unspecified"]);
+
             myChart.addMeasureAxis("y", "Count");
             myChart.addSeries(["Sex","Pclass"], dimple.plot.bar).addOrderRule("Pclass");
             myChart.addLegend(200, 10, 380, 20, "right");
